@@ -12,6 +12,7 @@ function uiImageDirective(ImageCache) {
     replace: true,
     scope: {
       src: '@',
+      srcexp: '@',
       title: '@'
     },
     template: '<img title="{{title}}" />'
@@ -20,7 +21,7 @@ function uiImageDirective(ImageCache) {
   function link(scope, element, attributes) {
     element.attr('src', DEFAULT_BASE_64_DATA);
     ImageCache
-      .get(attributes.src)
+      .get(attributes.srcexp || attributes.src)
       .then(function onGetImageData(base64) {
         element.attr('src', base64);
       })

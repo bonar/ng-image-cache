@@ -10,6 +10,9 @@
       <ui-image data-src="images/angularjs.png" data-title="local"></ui-image>
       <ui-image data-src="//angularjs.org/img/AngularJS-large.png" data-title="external"></ui-image>
     </div>
+    <div ng-controller="TestController">
+      <ui-image data-srcexp="{{url}}" data-title="eval"></ui-image>
+    </div>
     <script defer src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
     <script defer src="../dist/ng-image-cache.js"></script>
     <script defer src="./app.js"></script>
